@@ -41,8 +41,7 @@ void OpenGLWindow::initializeGL() {
   // Create program to render the other objects
   m_objectsProgram = createProgramFromFile(getAssetsPath() + "objects.vert",
                                            getAssetsPath() + "objects.frag");
-m_starsProgram = createProgramFromFile(getAssetsPath() + "stars.vert",
-                                       getAssetsPath() + "stars.frag");
+
   abcg::glClearColor(0, 0, 0, 1);
 
 #if !defined(__EMSCRIPTEN__)
