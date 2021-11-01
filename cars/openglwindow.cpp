@@ -92,7 +92,6 @@ void OpenGLWindow::paintGL() {
 } 
 
 void OpenGLWindow::paintUI() {
-  float deltaTime{static_cast<float>(getDeltaTime())};
   abcg::OpenGLWindow::paintUI();
 
   {
@@ -106,15 +105,13 @@ void OpenGLWindow::paintUI() {
                            ImGuiWindowFlags_NoInputs};
     ImGui::Begin(" ", nullptr, flags);
     ImGui::PushFont(m_font);
-    ImGui::SetCursorScreenPos(-1,1)
-    ImGui::Text("%f", 1.0f * m_car.m_velocity.y);
+
+   
     
     if (m_gameData.m_state == State::GameOver) {
       ImGui::Text("Game Over!");
           
-    } else if (m_gameData.m_state == State::Win) {
-      ImGui::Text("*You Win!*");
-    }
+    } 
 
     ImGui::PopFont();
     ImGui::End();
